@@ -93,7 +93,7 @@ export const GraphicDesignGrid: React.FC = () => {
       {/* 15 Grid Slots in 1:1 Aspect Ratio (Square) */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
         {filteredItems.map((item, idx) => {
-          const customImg = userCustomImages[item.id];
+          const displayImg = userCustomImages[item.id] || item.placeholderImageUrl;
 
           return (
             <motion.div
@@ -107,12 +107,13 @@ export const GraphicDesignGrid: React.FC = () => {
               {/* 1:1 Aspect Ratio Frame */}
               <div className="relative aspect-square w-full overflow-hidden bg-stone-900 select-none">
                 {/* Background Artwork or Custom Uploaded Image */}
-                {customImg ? (
+                {displayImg ? (
                   <>
                     <img
-                      src={customImg}
+                      src={displayImg}
                       alt={item.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                     {/* Clean subtle hover overlay: only reveals minimal title on hover so artwork is 100% visible */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-2.5 z-10 pointer-events-none">
@@ -158,7 +159,7 @@ export const GraphicDesignGrid: React.FC = () => {
                 <span className="font-mono text-[9px] text-stone-400">Post #{idx + 1}</span>
                 <label className="flex items-center gap-1 text-[9px] text-stone-400 hover:text-white cursor-pointer px-1.5 py-0.5 rounded hover:bg-stone-800 transition-colors">
                   <Upload className="w-2.5 h-2.5" />
-                  <span>{customImg ? 'Replace' : 'Upload'}</span>
+                  <span>{displayImg ? 'Replace' : 'Upload'}</span>
                   <input
                     type="file"
                     accept="image/*"
@@ -206,9 +207,9 @@ export const GraphicDesignGrid: React.FC = () => {
               <div className="p-5 overflow-y-auto space-y-4">
                 {/* 1:1 Aspect Ratio Full Preview */}
                 <div className="relative aspect-square max-h-72 w-auto mx-auto rounded-xl overflow-hidden bg-stone-950 border border-stone-700 shadow-inner flex flex-col justify-between p-4">
-                  {userCustomImages[selectedItem.id] ? (
+                  {(userCustomImages[selectedItem.id] || selectedItem.placeholderImageUrl) ? (
                     <img
-                      src={userCustomImages[selectedItem.id]}
+                      src={userCustomImages[selectedItem.id] || selectedItem.placeholderImageUrl}
                       alt={selectedItem.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />

@@ -62,7 +62,7 @@ export const VibrantNortaReelsGrid: React.FC = () => {
       {/* 6 Grid Slots in 9:16 Ratio */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         {vibrantNortaReels.map((reel, idx) => {
-          const customImg = userCustomImages[reel.id];
+          const displayImg = userCustomImages[reel.id] || reel.placeholderCoverUrl;
 
           return (
             <motion.div
@@ -76,21 +76,32 @@ export const VibrantNortaReelsGrid: React.FC = () => {
               {/* 9:16 Aspect Ratio Frame */}
               <div className="relative aspect-[9/16] w-full overflow-hidden bg-stone-900 select-none">
                 {/* Background Image or Aesthetic Motion Graphic */}
-                {customImg ? (
+                {displayImg ? (
                   <>
                     <img
-                      src={customImg}
+                      src={displayImg}
                       alt={reel.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
+                    {/* Top Overlay Badges */}
+                    <div className="absolute top-2.5 inset-x-2.5 z-10 flex items-center justify-between gap-1 pointer-events-none">
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-amber-300 border border-white/10 text-[10px] font-mono font-bold">
+                        <Eye className="w-2.5 h-2.5 text-amber-400" />
+                        {reel.views.split(' ')[0]}
+                      </span>
+                      <span className="px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-stone-200 border border-white/10 text-[9px] font-mono">
+                        {reel.duration}
+                      </span>
+                    </div>
                     {/* Center Play Button on Hover */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none">
-                      <div className="w-10 h-10 rounded-full bg-white/30 backdrop-blur-md border border-white/50 flex items-center justify-center text-white shadow-lg">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none">
+                      <div className="w-10 h-10 rounded-full bg-white/30 backdrop-blur-md border border-white/50 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                         <Play className="w-4 h-4 fill-current ml-0.5" />
                       </div>
                     </div>
                     {/* Clean hover overlay with single title line */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-2.5 z-10 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-2.5 z-10 pointer-events-none">
                       <p className="text-[11px] font-medium text-white truncate drop-shadow-sm">
                         {reel.title}
                       </p>
@@ -142,7 +153,7 @@ export const VibrantNortaReelsGrid: React.FC = () => {
                 <span className="font-mono text-[9px] text-stone-400">Reel #{idx + 1}</span>
                 <label className="flex items-center gap-1 text-[9px] text-stone-400 hover:text-white cursor-pointer px-1 py-0.5 rounded hover:bg-stone-800 transition-colors">
                   <Upload className="w-2.5 h-2.5" />
-                  <span>{customImg ? 'Replace' : 'Upload'}</span>
+                  <span>{displayImg ? 'Replace' : 'Upload'}</span>
                   <input
                     type="file"
                     accept="image/*"
@@ -188,12 +199,37 @@ export const VibrantNortaReelsGrid: React.FC = () => {
               <div className="p-5 overflow-y-auto space-y-4">
                 {/* 9:16 Visual Mockup Preview */}
                 <div className="relative aspect-[9/16] max-h-72 w-auto mx-auto rounded-xl overflow-hidden bg-stone-950 border border-stone-700 shadow-inner flex flex-col justify-between p-4">
-                  {userCustomImages[selectedReel.id] ? (
-                    <img
-                      src={userCustomImages[selectedReel.id]}
-                      alt={selectedReel.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                  {(userCustomImages[selectedReel.id] || selectedReel.placeholderCoverUrl) ? (
+                    <div className="absolute inset-0">
+                      <img
+                        src={userCustomImages[selectedReel.id] || selectedReel.placeholderCoverUrl}
+                        alt={selectedReel.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 flex flex-col justify-between p-3 pointer-events-none">
+                        <div className="flex justify-between items-center text-xs font-mono">
+                          <span className="px-2 py-0.5 rounded bg-black/60 text-amber-300 font-bold">
+                            {selectedReel.views}
+                          </span>
+                          <span className="px-2 py-0.5 rounded bg-black/60 text-stone-300">
+                            {selectedReel.duration}
+                          </span>
+                        </div>
+                        <div className="self-center my-auto">
+                          <div className="w-12 h-12 rounded-full bg-white/40 backdrop-blur-md text-white flex items-center justify-center shadow-xl">
+                            <Play className="w-5 h-5 fill-current ml-0.5" />
+                          </div>
+                        </div>
+                        <div className="space-y-0.5 text-left bg-black/70 p-2 rounded-lg backdrop-blur-xs">
+                          <div className="text-[10px] font-mono text-amber-300 font-bold uppercase">
+                            {selectedReel.category}
+                          </div>
+                          <div className="text-xs font-bold text-white truncate">
+                            {selectedReel.title}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   ) : (
                     <div
                       className={`absolute inset-0 bg-gradient-to-b ${selectedReel.accentGradient} opacity-90 flex flex-col justify-between p-4`}

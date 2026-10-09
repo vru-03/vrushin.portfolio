@@ -45,6 +45,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'Top-performing viral hook with 59.8K views. High-tempo cut synced to garba beats, featuring explosive light cues and kinetic text hooks.',
     badge: '🏆 Top Performer · 59.8K Views',
     accentGradient: 'from-amber-500 via-rose-600 to-purple-900',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_1.jpg',
   },
   {
     id: 'norta-reel-2',
@@ -58,6 +59,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'Dynamic artist spotlight reel introducing headline performers with rhythmic pacing, bold typography, and visual transitions.',
     badge: '🔥 48.2K Views',
     accentGradient: 'from-pink-500 via-purple-600 to-indigo-950',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_2.jpg',
   },
   {
     id: 'norta-reel-3',
@@ -71,6 +73,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'Fast-paced pass release teaser driving instant DMs and ticket conversions. Includes motion graphics and urgency countdown.',
     badge: '⚡ 39.5K Views',
     accentGradient: 'from-violet-600 via-fuchsia-600 to-stone-900',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_3.jpg',
   },
   {
     id: 'norta-reel-4',
@@ -84,6 +87,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'Intimate backstage rehearsals, soundchecks, and lighting setup capturing the authentic energy and preparation before showtime.',
     badge: '🎬 31.8K Views',
     accentGradient: 'from-emerald-600 via-teal-700 to-stone-900',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_4.webp',
   },
   {
     id: 'norta-reel-5',
@@ -97,6 +101,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'High-energy crowd immersion reel showing thousands of attendees dancing in synchronized rhythm under arena floodlights.',
     badge: '✨ 24.6K Views',
     accentGradient: 'from-orange-500 via-amber-600 to-stone-900',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_5.webp',
   },
   {
     id: 'norta-reel-6',
@@ -110,6 +115,7 @@ export const vibrantNortaReels: ReelItem[] = [
       'Cinematic recap combining drone perspectives, smiling faces, and final applause to cement lasting brand love.',
     badge: '🌟 19.4K Views',
     accentGradient: 'from-blue-600 via-indigo-700 to-stone-900',
+    placeholderCoverUrl: '/work/vibrant_norta/norta_6.webp',
   },
 ];
 
@@ -119,6 +125,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   // ==========================================
   {
     id: 'gd-infinity-1',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_1.jpg',
     title: 'Sunrise Infinity · Luxury 3BHK Sunset Elevation',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -138,6 +145,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-2',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_2.jpg',
     title: 'Sunrise Infinity · Clubhouse & Infinity Pool Deck',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -157,6 +165,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-3',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_3.jpg',
     title: 'Raksha Bandhan · "The Gift of a Lifetime Home"',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -176,6 +185,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-4',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_4.jpg',
     title: 'Father’s Day · "Building A Legacy for Generations"',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -195,6 +205,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-5',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_5.jpg',
     title: 'Independence Day · Tricolor Architectural Tribute',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -214,6 +225,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-6',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_6.jpg',
     title: 'Sunrise Infinity · Sky Lounge & Star Gazing Deck',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -233,6 +245,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-7',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_7.jpg',
     title: 'Grand Launch Announcement · RERA Approved 3 & 4 BHK',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -252,6 +265,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-8',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_8.jpg',
     title: 'Diwali Grand Muhurat · Illuminate Your Dream Home',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -271,6 +285,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-9',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_9.jpg',
     title: 'Master Penthouse Suite · Double-Height Living Experience',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -290,6 +305,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-10',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_10.jpg',
     title: 'Makar Sankranti · "Soar High Above The Ordinary"',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -309,6 +325,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-11',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_11.jpg',
     title: 'Navratri Mahotsav · 9 Nights of Auspicious Bookings',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -328,6 +345,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-12',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_12.jpg',
     title: 'Smart Home Automation & 3-Tier Biometric Security',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -347,6 +365,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-13',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_13.jpg',
     title: 'High-ROI Investment Spotlight · Capital Appreciation Hub',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -366,6 +385,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-14',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_14.jpg',
     title: 'New Year 2025 · "Step Into Elevated Luxury"',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -385,6 +405,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-infinity-15',
+    placeholderImageUrl: '/work/sunrise_infinity/sunrise_inf_15.jpg',
     title: 'Vastu Compliant 3BHKs · Cross Ventilation & Natural Light',
     brand: 'Sunrise Infinity',
     brandHandle: '@sunriseinfinity',
@@ -408,6 +429,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   // ==========================================
   {
     id: 'gd-homes-1',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_1.jpg',
     title: 'Sunrise Homes 88 · "Keys to Happiness" Handover',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -427,6 +449,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-2',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_2.jpg',
     title: 'Janmashtami · Festive Blessings & New Home Booking',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -446,6 +469,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-3',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_3.jpg',
     title: 'Rath Yatra · The Grand Journey to Your Dream Home',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -465,6 +489,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-4',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_4.jpg',
     title: 'Friendship Day · "Neighbors Who Become Family"',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -484,6 +509,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-5',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_5.jpg',
     title: 'Sunrise Homes 88 · Master Suite & Italian Marble Finishes',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -503,6 +529,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-6',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_6.jpg',
     title: 'Affordable Luxury 2 & 3 BHK · Prime Gated Living',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -522,6 +549,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-7',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_7.jpg',
     title: 'Children’s Play Park & Senior Citizens’ Reflexology Track',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -541,6 +569,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-homes-8',
+    placeholderImageUrl: '/work/sunrise_homes/sunrise_homes_8.jpg',
     title: 'Festive Diwali Dhamaka · Modular Kitchen & Gold Coin',
     brand: 'Sunrise Homes',
     brandHandle: '@sunrisehomes88',
@@ -564,6 +593,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   // ==========================================
   {
     id: 'gd-sharnam-1',
+    placeholderImageUrl: '/work/sharnam/sharnam_1.jpg',
     title: 'Sharnam Happy Homes · Sky Deck Amenities Spotlight',
     brand: 'Sharnam Happy Homes',
     brandHandle: '@sharmamhappyhomes',
@@ -583,6 +613,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-sharnam-2',
+    placeholderImageUrl: '/work/sharnam/sharnam_2.jpg',
     title: 'Ganesh Chaturthi · Auspicious Beginnings & Muhurat Offer',
     brand: 'Sharnam Happy Homes',
     brandHandle: '@sharmamhappyhomes',
@@ -602,6 +633,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-sharnam-3',
+    placeholderImageUrl: '/work/sharnam/sharnam_3.jpg',
     title: 'International Yoga Day · Mindful Living & Zen Garden',
     brand: 'Sharnam Happy Homes',
     brandHandle: '@sharmamhappyhomes',
@@ -621,6 +653,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-sharnam-4',
+    placeholderImageUrl: '/work/sharnam/sharnam_4.jpg',
     title: 'Sharnam Happy Homes · Strategic Highway & Metro Connectivity',
     brand: 'Sharnam Happy Homes',
     brandHandle: '@sharmamhappyhomes',
@@ -640,6 +673,7 @@ export const graphicDesignGallery: GraphicDesignItem[] = [
   },
   {
     id: 'gd-sharnam-5',
+    placeholderImageUrl: '/work/sharnam/sharnam_5.jpg',
     title: 'Budget-Friendly 2 BHK Smart Homes · Easy 10:90 Payment Plan',
     brand: 'Sharnam Happy Homes',
     brandHandle: '@sharmamhappyhomes',

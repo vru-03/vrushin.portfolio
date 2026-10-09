@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
 import { vrushinProfile, homeProjectsPreview, homeWritingPreview } from '../data/homeData';
+import portraitImg from '../assets/portrait.jpg';
 import {
   Mail,
   Check,
@@ -8,9 +9,6 @@ import {
   X,
   Clock,
   BookOpen,
-  Camera,
-  RotateCcw,
-  Sparkles,
   Instagram,
   FileText,
   FolderGit2,
@@ -21,41 +19,14 @@ export const HomeView: React.FC = () => {
   const { setActiveSection } = usePortfolio();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [selectedEssay, setSelectedEssay] = useState<typeof homeWritingPreview[0] | null>(null);
-  const [customPhoto, setCustomPhoto] = useState<string | null>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('vrushin_custom_portrait');
-    }
-    return null;
-  });
-  const [isDragging, setIsDragging] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handlePhotoUpload = (file: File) => {
-    if (!file || !file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const result = e.target?.result as string;
-      if (result) {
-        setCustomPhoto(result);
-        try {
-          localStorage.setItem('vrushin_custom_portrait', result);
-        } catch (err) {
-          console.warn('Storage limit reached', err);
-        }
-      }
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleResetPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCustomPhoto(null);
+  useEffect(() => {
     try {
       localStorage.removeItem('vrushin_custom_portrait');
-    } catch (err) {
-      console.warn(err);
+    } catch {
+      // ignore
     }
-  };
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(vrushinProfile.socials.email);
@@ -79,98 +50,24 @@ export const HomeView: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="order-first md:order-last md:col-span-4 flex justify-start md:justify-end w-full md:w-auto"
         >
-          <div className="relative group w-full max-w-[270px]">
-            {/* Ambient Cinematic Blue & Purple Back-Glow */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-600/25 via-indigo-500/20 to-purple-600/30 blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative w-full max-w-[270px]">
+            {/* Ambient Subtle Back-Glow */}
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-stone-400/20 via-stone-300/10 to-stone-400/20 blur-md opacity-60" />
 
-            {/* Hidden File Input for Custom Upload */}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) handlePhotoUpload(f);
-              }}
-            />
-
-            {/* Card Frame with Drag & Drop */}
-            <div
-              onDragOver={(e) => {
-                e.preventDefault();
-                setIsDragging(true);
-              }}
-              onDragLeave={() => setIsDragging(false)}
-              onDrop={(e) => {
-                e.preventDefault();
-                setIsDragging(false);
-                const f = e.dataTransfer.files?.[0];
-                if (f) handlePhotoUpload(f);
-              }}
-              className={`relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 border transition-all duration-300 shadow-md ${
-                isDragging
-                  ? 'border-indigo-400 ring-2 ring-indigo-400/50 scale-[1.02]'
-                  : 'border-purple-300/30 hover:border-indigo-400/50'
-              }`}
-            >
+            {/* Card Frame */}
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-md">
               {/* Portrait Image */}
               <img
-                src={customPhoto || '/Cinematic Blue and Purple Portrait.png'}
-                alt="Vrushin — Cinematic Portrait"
-                referrerPolicy="no-referrer"
+                src={portraitImg}
+                alt="Vrushin Prajapati"
                 onError={(e) => {
-                  const target = e.currentTarget;
-                  if (!target.src.includes('photo-1506794778202')) {
-                    target.src =
-                      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80';
-                  }
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = 'https://res.cloudinary.com/wkzzjvjk/image/upload/f_auto,q_auto/profile';
                 }}
-                className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover object-center"
               />
 
-              {/* Cinematic Dual-Tone Color Cast Overlay */}
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-blue-900/20 via-transparent to-purple-900/25 mix-blend-color" />
               <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-2xl" />
-
-              {/* Cinematic Lighting Badge */}
-              <div className="absolute top-2.5 left-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-950/70 backdrop-blur-md text-[10px] font-medium text-purple-200 border border-purple-500/20 shadow-xs pointer-events-none">
-                <Sparkles className="w-2.5 h-2.5 text-indigo-300" />
-                <span>Cinematic</span>
-              </div>
-
-              {/* Hover Actions: Change photo & Reset */}
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-stone-950/90 via-stone-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-lg bg-stone-900/90 hover:bg-stone-800 text-stone-100 text-[11px] font-medium border border-stone-700/60 shadow-xs transition-colors cursor-pointer"
-                  title="Upload or change portrait image"
-                >
-                  <Camera className="w-3 h-3 text-indigo-400" />
-                  <span>Change photo</span>
-                </button>
-
-                {customPhoto && (
-                  <button
-                    type="button"
-                    onClick={handleResetPhoto}
-                    className="p-1.5 rounded-lg bg-stone-900/90 hover:bg-stone-800 text-stone-400 hover:text-stone-200 border border-stone-700/60 transition-colors cursor-pointer"
-                    title="Reset to default portrait"
-                  >
-                    <RotateCcw className="w-3 h-3" />
-                  </button>
-                )}
-              </div>
-
-              {/* Dragging Feedback Indicator */}
-              {isDragging && (
-                <div className="absolute inset-0 bg-indigo-950/80 backdrop-blur-xs flex flex-col items-center justify-center text-center p-4 text-white pointer-events-none">
-                  <Camera className="w-8 h-8 text-indigo-300 mb-2 animate-bounce" />
-                  <p className="text-xs font-semibold">Drop image here</p>
-                  <p className="text-[10px] text-stone-300">Set as home portrait</p>
-                </div>
-              )}
             </div>
           </div>
         </motion.div>
