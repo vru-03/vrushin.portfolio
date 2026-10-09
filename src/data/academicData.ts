@@ -7,7 +7,7 @@ export const academicData: AcademicData = {
   summary: {
     degreesCount: 3,
     internationalExperience: 'France (Paris) & India',
-    highestCgpa: '7.6 / 10',
+    highestCgpa: '8.0 / 10',
     focusArea: 'E-Commerce, Digital Business & Commerce Analytics',
   },
   milestones: [
@@ -22,7 +22,7 @@ export const academicData: AcademicData = {
       period: '2021 – 2024',
       status: 'Completed',
       metrics: {
-        primary: '7.6 / 10',
+        primary: '8.0 / 10',
         primaryLabel: 'CGPA',
       },
       boardOrAccreditation: 'AACSB / AMBA Accredited Grande École Environment',

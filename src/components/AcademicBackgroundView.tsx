@@ -15,7 +15,7 @@ export const AcademicBackgroundView: React.FC = () => {
       title: 'International BBA',
       subtitle: 'E-Commerce & Digital Marketing',
       place: 'Paris School of Business',
-      score: '7.6 CGPA',
+      score: '8.0 CGPA',
       country: 'France 🇫🇷',
       highlight: true,
     },
@@ -217,7 +217,7 @@ export const AcademicBackgroundView: React.FC = () => {
             {/* Score Badge */}
             <div className="w-28 sm:w-32 py-2 px-2.5 sm:px-3 rounded-xl bg-stone-50 border border-stone-200 text-center shrink-0 self-start sm:self-auto">
               <div className="text-[10px] font-mono uppercase text-stone-400 font-medium tracking-wide">CGPA</div>
-              <div className="text-base font-bold font-mono text-stone-900">7.6 / 10</div>
+              <div className="text-base font-bold font-mono text-stone-900">8.0 / 10</div>
             </div>
           </div>
 

@@ -78,7 +78,7 @@ export const WorkView: React.FC = () => {
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
-          professional Work, production & digital deliverables
+          professional work, production & digital deliverables
         </h1>
 
         <p className="text-stone-600 text-[15px] sm:text-base leading-relaxed">
@@ -200,7 +200,11 @@ export const WorkView: React.FC = () => {
           {/* TAB 1: SOCIAL MEDIA EXECUTIVE (SHIV SHAKTI) */}
           {selectedCategory === 'social-media' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-              <div className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1">
+              <motion.div
+                whileHover={{ scale: 1.015, y: -2 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1 hover:border-stone-300 hover:shadow-xs transition-all"
+              >
                 <div className="flex items-center gap-2 text-stone-900 font-semibold text-xs">
                   <span className="text-stone-400 font-mono">01.</span>
                   <span>4 Site Accounts & 3 Social Platforms</span>
@@ -208,9 +212,13 @@ export const WorkView: React.FC = () => {
                 <p className="text-xs text-stone-600 leading-relaxed">
                   Managed digital marketing operations across 4 distinct site accounts and 3 social platforms (Instagram, Facebook, LinkedIn), driving synchronized branding and buyer lead acquisition via Buffer and Meta Business Suite.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1">
+              <motion.div
+                whileHover={{ scale: 1.015, y: -2 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1 hover:border-stone-300 hover:shadow-xs transition-all"
+              >
                 <div className="flex items-center gap-2 text-stone-900 font-semibold text-xs">
                   <span className="text-stone-400 font-mono">02.</span>
                   <span>230+ Creatives & 220+ Posts/Reels</span>
@@ -218,9 +226,13 @@ export const WorkView: React.FC = () => {
                 <p className="text-xs text-stone-600 leading-relaxed">
                   Created 230+ promotional creatives (hoardings, brochures, launch banners in Photoshop & Canva) and 220+ dynamic posts/reels for property & project promotion with video post-production in Premiere Pro & CapCut.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1">
+              <motion.div
+                whileHover={{ scale: 1.015, y: -2 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1 hover:border-stone-300 hover:shadow-xs transition-all"
+              >
                 <div className="flex items-center gap-2 text-stone-900 font-semibold text-xs">
                   <span className="text-stone-400 font-mono">03.</span>
                   <span>12+ Facebook & Instagram Ad Campaigns</span>
@@ -228,9 +240,13 @@ export const WorkView: React.FC = () => {
                 <p className="text-xs text-stone-600 leading-relaxed">
                   Executed 12+ targeted Facebook & Instagram ad campaigns from strategy to launch. Managed geo-radius targeting, creative variant A/B testing, and lead routing into HubSpot CRM to optimize Cost-Per-Lead (CPL).
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1">
+              <motion.div
+                whileHover={{ scale: 1.015, y: -2 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="p-3.5 rounded-xl bg-white border border-stone-200/80 space-y-1 hover:border-stone-300 hover:shadow-xs transition-all"
+              >
                 <div className="flex items-center gap-2 text-stone-900 font-semibold text-xs">
                   <span className="text-stone-400 font-mono">04.</span>
                   <span>End-to-End Content, Paid Ads & Operations</span>
@@ -238,7 +254,7 @@ export const WorkView: React.FC = () => {
                 <p className="text-xs text-stone-600 leading-relaxed">
                   Owned the complete workflow: content strategy, graphic design, video post-production (Premiere Pro & CapCut), paid advertising campaigns, and social media community management with Buffer & HubSpot.
                 </p>
-              </div>
+              </motion.div>
             </div>
           )}
 
@@ -497,8 +513,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpenCaseStu
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="p-5 sm:p-6 rounded-2xl bg-white border border-stone-200/90 hover:border-stone-400/80 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-4 group"
+      whileHover={{ scale: 1.015, y: -4 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      onClick={onOpenCaseStudy}
+      className="p-5 sm:p-6 rounded-2xl bg-white border border-stone-200/90 hover:border-stone-400/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-4 group cursor-pointer"
     >
       <div className="space-y-3.5">
         {/* Top Badges & Period */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ExternalLink, Instagram, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface InstagramSitesBarProps {
@@ -74,12 +75,14 @@ export const InstagramSitesBar: React.FC<InstagramSitesBarProps> = ({
       {/* 3 Links in One Single Line Side by Side (Grid 3 Columns) */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
         {instagramSites.map((site) => (
-          <a
+          <motion.a
             key={site.handle}
             href={site.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col justify-between p-3.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700/80 hover:border-stone-500 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-xs"
+            whileHover={{ scale: 1.02, y: -2 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="group relative flex flex-col justify-between p-3.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-stone-700/80 hover:border-stone-500 transition-colors cursor-pointer shadow-xs hover:shadow-md"
           >
             <div className="space-y-2">
               {/* Header with icon, name & external arrow */}
@@ -120,7 +123,7 @@ export const InstagramSitesBar: React.FC<InstagramSitesBarProps> = ({
                 Open Instagram ↗
               </span>
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
     </div>

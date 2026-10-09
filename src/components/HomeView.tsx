@@ -50,12 +50,16 @@ export const HomeView: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="order-first md:order-last md:col-span-4 flex justify-start md:justify-end w-full md:w-auto"
         >
-          <div className="relative w-full max-w-[270px]">
+          <motion.div
+            whileHover={{ scale: 1.015 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="relative w-full max-w-[270px] group cursor-pointer"
+          >
             {/* Ambient Subtle Back-Glow */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-stone-400/20 via-stone-300/10 to-stone-400/20 blur-md opacity-60" />
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-stone-400/20 via-stone-300/10 to-stone-400/20 blur-md opacity-60 group-hover:opacity-90 transition-opacity" />
 
             {/* Card Frame */}
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-md">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-md group-hover:shadow-xl transition-shadow">
               {/* Portrait Image */}
               <img
                 src={portraitImg}
@@ -64,12 +68,12 @@ export const HomeView: React.FC = () => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = 'https://res.cloudinary.com/wkzzjvjk/image/upload/f_auto,q_auto/profile';
                 }}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-2xl" />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Left Column: Intro & Summary (appears after photo on mobile, left column on desktop) */}
@@ -141,7 +145,7 @@ export const HomeView: React.FC = () => {
                     className="font-medium text-stone-900 hover:text-stone-600 transition-colors cursor-pointer inline-flex items-center gap-1 text-left group"
                   >
                     <span>
-                      <span className="underline underline-offset-2">International BBA in E-Commerce & Digital Marketing</span> — Paris School of Business ('24)
+                      <span className="underline underline-offset-2">International BBA in E-Commerce & Digital Marketing</span> (8.0 CGPA) — Paris School of Business ('24)
                     </span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-800 transition-colors shrink-0" />
                   </button>
@@ -335,30 +339,31 @@ export const HomeView: React.FC = () => {
             </button>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {homeProjectsPreview.map((proj, idx) => (
               <motion.div
                 key={proj.id}
                 initial={{ opacity: 0, x: -8 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                whileHover={{ scale: 1.018, x: 4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
                 onClick={() => setActiveSection('work')}
-                className="flex items-start gap-3.5 group cursor-pointer"
+                className="flex items-start gap-3.5 group cursor-pointer p-2.5 -mx-2.5 rounded-xl hover:bg-stone-100/80 transition-colors"
               >
                 {/* Project Icon Pill */}
                 <div
                   style={{ backgroundColor: proj.iconBg }}
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-bold tracking-tight shrink-0 mt-0.5 shadow-xs transition-transform group-hover:scale-105"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-bold tracking-tight shrink-0 mt-0.5 shadow-xs transition-transform group-hover:scale-110"
                 >
                   {proj.iconText}
                 </div>
 
                 {/* Project Details */}
                 <div className="space-y-0.5">
-                  <h3 className="text-[14px] font-medium text-stone-900 group-hover:underline underline-offset-2 flex items-center gap-1">
-                    {proj.title}
-                    <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-800 transition-colors" />
+                  <h3 className="text-[14px] font-medium text-stone-900 group-hover:text-stone-950 flex items-center gap-1">
+                    <span className="group-hover:underline underline-offset-2">{proj.title}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-800 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </h3>
                   <p className="text-xs text-stone-500 leading-snug">
                     {proj.description}

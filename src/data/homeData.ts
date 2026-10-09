@@ -20,7 +20,7 @@ export const vrushinProfile: VrushinProfile = {
       linkSection: 'work',
     },
     {
-      text: "International BBA in E-Commerce & Digital Marketing — Paris School of Business ('24)",
+      text: "International BBA in E-Commerce & Digital Marketing (8.0 CGPA) — Paris School of Business ('24)",
       linkSection: 'academic',
     },
     {

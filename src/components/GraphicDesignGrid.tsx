@@ -100,8 +100,9 @@ export const GraphicDesignGrid: React.FC = () => {
               key={item.id}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: idx * 0.03 }}
-              className="group relative rounded-2xl overflow-hidden border border-stone-300 shadow-xs hover:shadow-md transition-all duration-300 bg-stone-950 flex flex-col cursor-pointer"
+              whileHover={{ scale: 1.025, y: -3 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="group relative rounded-2xl overflow-hidden border border-stone-300 shadow-xs hover:shadow-lg transition-shadow duration-300 bg-stone-950 flex flex-col cursor-pointer"
               onClick={() => setSelectedItem(item)}
             >
               {/* 1:1 Aspect Ratio Frame */}
