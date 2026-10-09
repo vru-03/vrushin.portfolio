@@ -4,6 +4,7 @@ import {
   socialMediaSoftwareStack,
   freelanceSoftwareStack,
   graphicDesignSoftwareStack,
+  selfEditingSoftwareStack,
   SoftwareTool,
 } from '../data/softwareStackData';
 import { Sparkles, Layers, CheckCircle2, ChevronRight, Info } from 'lucide-react';
@@ -28,8 +29,11 @@ export const SoftwareStackShowcase: React.FC<SoftwareStackShowcaseProps> = ({ ac
     if (activeTab === 'graphic-design') {
       return graphicDesignSoftwareStack;
     }
+    if (activeTab === 'self-editing') {
+      return selfEditingSoftwareStack;
+    }
     // For 'all'
-    return [...socialMediaSoftwareStack, ...graphicDesignSoftwareStack, ...freelanceSoftwareStack];
+    return [...socialMediaSoftwareStack, ...graphicDesignSoftwareStack, ...freelanceSoftwareStack, ...selfEditingSoftwareStack];
   };
 
   const currentTools = getToolsForTab();
@@ -64,7 +68,9 @@ export const SoftwareStackShowcase: React.FC<SoftwareStackShowcaseProps> = ({ ac
               ? 'Video post-production, technical & research software utilized across Vibrant Norta and digital deliverables'
               : activeTab === 'graphic-design'
               ? 'Creative software and AI composition tools applied across 220+ social creatives and 15+ festival campaigns'
-              : 'Complete creative & technical software suite across executive tenure and freelance practice'}
+              : activeTab === 'self-editing'
+              ? 'Video post-production, kinetic sound design, and color grading software utilized across 60+ self-edited reels'
+              : 'Complete creative & technical software suite across executive tenure, freelance practice, and video archives'}
           </p>
         </div>
 

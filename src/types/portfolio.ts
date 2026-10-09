@@ -1,12 +1,12 @@
 export type NavSection = 'home' | 'work' | 'professional' | 'certifications' | 'academic';
 
-export type WorkCategory = 'social-media' | 'freelancing' | 'graphic-design' | 'all';
+export type WorkCategory = 'social-media' | 'freelancing' | 'graphic-design' | 'self-editing' | 'all';
 
 export interface WorkProject {
   id: string;
   title: string;
   client: string;
-  category: 'social-media' | 'freelancing' | 'graphic-design' | 'video-editing' | 'image-editing';
+  category: 'social-media' | 'freelancing' | 'graphic-design' | 'video-editing' | 'image-editing' | 'self-editing';
   role: string;
   period: string;
   headline: string;

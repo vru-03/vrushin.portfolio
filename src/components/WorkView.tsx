@@ -6,6 +6,7 @@ import { ToolLogoBadge, renderToolIcon } from './ToolLogoBadge';
 import { InstagramSitesBar } from './InstagramSitesBar';
 import { VibrantNortaReelsGrid } from './VibrantNortaReelsGrid';
 import { GraphicDesignGrid } from './GraphicDesignGrid';
+import { SelfEditingReelsGrid } from './SelfEditingReelsGrid';
 import {
   Layers,
   Share2,
@@ -58,6 +59,8 @@ export const WorkView: React.FC = () => {
         return <Briefcase className="w-4 h-4" />;
       case 'graphic-design':
         return <Palette className="w-4 h-4" />;
+      case 'self-editing':
+        return <Film className="w-4 h-4" />;
       default:
         return <Layers className="w-4 h-4" />;
     }
@@ -84,8 +87,9 @@ export const WorkView: React.FC = () => {
         <p className="text-stone-600 text-[15px] sm:text-base leading-relaxed">
           Detailed breakdown of executive digital marketing leadership at{' '}
           <strong className="text-stone-900 font-semibold">Shiv Shakti Developers Builders Pvt Ltd.</strong> (4 sites, 230+ creatives, 220+ reels),{' '}
-          <strong className="text-stone-900 font-semibold">Freelance Social Media & Video Editing</strong> at Vibrant Norta (423K+ views, 27+ reels), and{' '}
-          <strong className="text-stone-900 font-semibold">Graphic Designing</strong> across 3 real estate brands with 15+ festival campaigns.
+          <strong className="text-stone-900 font-semibold">Freelance Social Media & Video Editing</strong> at Vibrant Norta (423K+ views, 27+ reels),{' '}
+          <strong className="text-stone-900 font-semibold">Graphic Designing</strong> across 3 real estate brands with 15+ festival campaigns, and{' '}
+          <strong className="text-stone-900 font-semibold">Self-Edited Reels Archive</strong> (60+ videos in Premiere Pro & CapCut).
         </p>
 
         {/* Global Key Stats Bar */}
@@ -387,7 +391,64 @@ export const WorkView: React.FC = () => {
             </div>
           )}
 
-          {/* TAB 4: ALL EXPERIENCE */}
+          {/* TAB 4: SELF-EDITED REELS (GOOGLE DRIVE ARCHIVE) */}
+          {selectedCategory === 'self-editing' && (
+            <div className="space-y-3 pt-1">
+              <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-red-50/80 via-stone-50 to-rose-50/70 border border-red-200/80 space-y-3 shadow-xs">
+                <div className="flex items-center justify-between flex-wrap gap-2 border-b border-red-200/60 pb-2.5">
+                  <div className="space-y-0.5">
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-red-800 font-bold">
+                      INDEPENDENT VIDEO POST-PRODUCTION & STORYTELLING
+                    </div>
+                    <div className="text-sm sm:text-base font-bold text-stone-900">
+                      Self-Edited Reels & Creative Video Archive
+                    </div>
+                    <div className="text-xs font-medium text-stone-600">
+                      Spiritual & Sacred Documentaries | Travel Vlogs | Festival Series | Creative Concepts
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-1 rounded-lg bg-red-900 text-red-100 font-mono text-xs font-bold">
+                      60+ Self-Edited Reels
+                    </span>
+                    <span className="px-2 py-1 rounded-lg bg-rose-100 text-rose-800 font-mono text-xs font-semibold">
+                      9:16 Vertical
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="space-y-2 text-xs sm:text-[13px] text-stone-700 pl-1">
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Independently conceptualized, shot, and edited 60+ vertical reels and short-form videos organized in the Google Drive <code className="text-red-800 bg-red-100/80 px-1 py-0.5 rounded text-[11px]">self_video_edits</code> archive.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Produced sacred heritage documentaries capturing Kashi 84 Ghats, Mahakumbh, Bhasma Aarti, Vrindavan Holi, Kailash Temple, and Tirupati Balaji.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Created a 12-part Ganesh Chaturthi series including Bappa Eyes, 56 Bhog, Visarjan, and emotional farewell visual narratives.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Edited travel and trekking narratives including Christmas in Paris, Hamta Pass Himalayan Trek at 14,000 Feet, and Mumbai street vlogs.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Engineered frame-accurate audio sync, kinetic transitions, atmospheric color grading, and dynamic sound design using Premiere Pro & CapCut Desktop.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-red-700 font-bold font-mono select-none mt-0.5">•</span>
+                    <span>Maintained consistent 9:16 vertical mobile optimization engineered for high viewer retention and algorithmic reach across social channels.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 5: ALL EXPERIENCE */}
           {selectedCategory === 'all' && (
             <div className="p-4 rounded-xl bg-white border border-stone-200/80 space-y-2">
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
@@ -452,6 +513,17 @@ export const WorkView: React.FC = () => {
             subtitle="Designed 220+ creatives and 15+ festival campaigns published live on these 3 builder accounts:"
           />
           <GraphicDesignGrid />
+        </motion.div>
+      )}
+
+      {/* CONTEXTUAL SHOWCASE FOR SELF-EDITED REELS TAB: 60+ 9:16 REELS GRID WITH LIVE STREAMING */}
+      {(selectedCategory === 'self-editing' || selectedCategory === 'all') && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+        >
+          <SelfEditingReelsGrid />
         </motion.div>
       )}
 
@@ -747,6 +819,48 @@ const VisualRepresentationFrame: React.FC<{ project: WorkProject }> = ({ project
         <div className="flex items-center justify-between text-[10px] text-stone-400 font-mono">
           <span>SUNRISE INFINITY · SUNRISE HOMES 88 · SHARNAM HAPPY HOMES</span>
           <span className="text-amber-400 font-semibold">100% BRAND COHESION</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Case 4: Self-Edited Reels & Video Editing Archive (Google Drive)
+  if (
+    project.id === 'self-edited-reels-archive' ||
+    project.category === 'self-editing'
+  ) {
+    return (
+      <div className="h-32 sm:h-36 rounded-xl bg-gradient-to-br from-stone-950 via-red-950/40 to-stone-900 text-white p-3.5 flex flex-col justify-between overflow-hidden relative border border-red-900/50 shadow-inner">
+        <div className="flex items-center justify-between text-[10px] font-mono text-red-300">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-red-500 inline-block animate-pulse" />
+            <span>SELF-EDITED REELS & CINEMATIC POST-PRODUCTION</span>
+          </div>
+          <span className="text-amber-400 font-semibold">PREMIERE PRO · CAPCUT · 9:16</span>
+        </div>
+
+        <div className="grid grid-cols-4 gap-2 text-center py-1">
+          <div className="bg-stone-900/90 p-2 rounded-lg border border-red-800/40">
+            <div className="text-[9px] font-mono text-red-300">REELS</div>
+            <div className="text-xs font-bold text-red-400 font-mono pt-0.5">60+ Produced</div>
+          </div>
+          <div className="bg-stone-900/90 p-2 rounded-lg border border-red-800/40">
+            <div className="text-[9px] font-mono text-red-300">RATIO</div>
+            <div className="text-xs font-bold text-cyan-400 font-mono pt-0.5">9:16 Vertical</div>
+          </div>
+          <div className="bg-stone-900/90 p-2 rounded-lg border border-red-800/40">
+            <div className="text-[9px] font-mono text-red-300">SACRED/TRAVEL</div>
+            <div className="text-xs font-bold text-amber-400 font-mono pt-0.5">34 Films</div>
+          </div>
+          <div className="bg-stone-900/90 p-2 rounded-lg border border-red-800/40">
+            <div className="text-[9px] font-mono text-red-300">GANPATI/CONCEPTS</div>
+            <div className="text-xs font-bold text-emerald-400 font-mono pt-0.5">29 Edits</div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between text-[10px] text-stone-400 font-mono">
+          <span>KASHI · MAHAKUMBH · PARIS · HAMTA PASS · GANPATI EDITS</span>
+          <span className="text-red-400 font-semibold">100% INDEPENDENT PRODUCTION</span>
         </div>
       </div>
     );

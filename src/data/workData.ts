@@ -94,6 +94,32 @@ export const workCategories: CategoryInfo[] = [
     ],
   },
   {
+    id: 'self-editing',
+    name: 'Self-Edited Reels',
+    roleTitle: 'Video Editor & Content Creator — Self-Directed Reels Archive',
+    companyOrContext: 'Self Editing Reels & Creative Video Projects',
+    period: '2023 – Present',
+    tagline: 'Cinematic Storytelling | Sound Design | Cultural & Travel Reels | Creative Concepts',
+    description:
+      'A collection of 60+ independently conceptualized, shot, and edited vertical reels and short videos from the Google Drive "self_video_edits" archive. Encompasses spiritual documentaries (Kashi 84 Ghats, Mahakumbh, Bhasma Aarti, Vrindavan Holi), Ganesh Chaturthi celebrations, travel journeys (Paris, Hamta Pass at 14K Feet, Mumbai), and aesthetic cinematic concepts edited in Premiere Pro & CapCut.',
+    stats: [
+      { label: 'Self-Edited Reels', value: '60+ Videos' },
+      { label: 'Aspect Ratio', value: '9:16 Vertical' },
+      { label: 'Spiritual & Sacred', value: '28 Reels' },
+      { label: 'Ganpati Series', value: '12 Edits' },
+      { label: 'Concepts & Aesthetic', value: '17 Projects' },
+      { label: 'Post-Production', value: 'Premiere & CapCut' },
+    ],
+    capabilities: [
+      '60+ Independently Conceptualized & Edited Reels (Premiere Pro & CapCut)',
+      'Spiritual Heritage Cinematography (Kashi 84 Ghats, Mahakumbh, Vrindavan, Bhasma Aarti)',
+      'Ganesh Chaturthi Multi-Part Festival Visuals & Emotional Pacing',
+      'Travel & Adventure Vlogs (Christmas in Paris, Hamta Pass Trek at 14,000 Ft, Mumbai)',
+      'Frame-Accurate Beat Sync, Sound Design, Audio Mixing & Visual Flow',
+      'Aesthetic Visual Concepts, Kinetic Typography & Atmospheric Color Grading',
+    ],
+  },
+  {
     id: 'all',
     name: 'All Experience',
     roleTitle: 'Social Media Executive, Video Editor & Graphic Designer',
@@ -280,6 +306,60 @@ export const workProjectsList: WorkProject[] = [
       ],
       keyTakeaway:
         'High-craft graphic design bridges architectural reality with buyer aspiration, turning property blueprints into desirable homes.',
+    },
+  },
+
+  // ==========================================
+  // TAB 4: SELF-EDITED REELS & VIDEO EDITING
+  // ==========================================
+  {
+    id: 'self-edited-reels-archive',
+    title: 'Self-Edited Reels & Cinematic Post-Production Portfolio (60+ Videos)',
+    client: 'Self-Directed Creative Projects (Google Drive Archive)',
+    category: 'self-editing',
+    role: 'Video Editor & Post-Production Creator',
+    period: '2023 – Present',
+    headline:
+      'Independently produced, shot, and edited 60+ vertical reels and short-form films spanning sacred heritage (Kashi 84 Ghats, Mahakumbh, Vrindavan Holi), Ganpati festival celebrations, international & Himalayan travel vlogs, and aesthetic concept edits with dynamic sound design in Premiere Pro & CapCut.',
+    deliverables: [
+      'Independently conceptualized, shot, and edited 60+ vertical reels and short-form videos organized in the self_video_edits Google Drive archive',
+      'Produced sacred documentaries capturing Kashi 84 Ghats, Mahakumbh, Bhasma Aarti, Vrindavan Holi, Kailash Temple, and Tirupati Balaji',
+      'Created a multi-part Ganesh Chaturthi series including Bappa Eyes, 56 Bhog, Visarjan, and emotional farewell sequences',
+      'Edited travel and trekking narratives including Christmas in Paris, Hamta Pass Himalayan Trek at 14,000 Feet, and Mumbai street vlogs',
+      'Engineered frame-accurate audio sync, kinetic transitions, atmospheric color grading, and dynamic sound design using Premiere Pro & CapCut',
+      'Maintained consistent 9:16 vertical mobile optimization engineered for high viewer retention and algorithmic reach',
+    ],
+    impactMetrics: [
+      { label: 'Self-Edited Reels', value: '60+ Videos' },
+      { label: 'Aspect Ratio', value: '9:16 Vertical' },
+      { label: 'Sacred & Cultural', value: '28 Films' },
+      { label: 'Post-Production', value: 'Premiere & CapCut' },
+    ],
+    tools: ['Premiere Pro', 'CapCut Desktop', 'Sound Design', 'Color Grading', 'Mobile Cinematography', 'Kinetic Typography'],
+    spotlight: true,
+    socialLinks: [
+      { label: 'Google Drive Archive', url: 'https://drive.google.com/drive/folders/1mUrpqNzKY4bI9Kd2dCQKMZb5HLIRFo8-?usp=sharing', handle: 'self_video_edits' },
+    ],
+    visualTheme: {
+      bgGradient: 'from-red-950/15 via-rose-950/10 to-stone-900/5',
+      badgeLabel: 'Independent Video Post-Production',
+      accentColor: 'text-red-700',
+    },
+    caseStudy: {
+      overview:
+        'A dedicated archive of 60+ self-edited reels and short-form documentaries stored in Google Drive (self_video_edits). Each video represents an independent creative exercise in concept ideation, camera capture, rhythmic sound synchronization, and narrative pacing without client constraints.',
+      challenge:
+        'Capturing high-energy live atmospheres—whether the sacred intensity of Varanasi ghats, the raw devotion of Ganpati visarjan, or freezing Himalayan trek ridges—and condensing hours of footage into 15 to 60-second high-retention vertical reels with emotional impact.',
+      solution:
+        'Applied a disciplined post-production workflow in Adobe Premiere Pro and CapCut Desktop: cutting on the beat of traditional and contemporary audio, layer-stacking ambient foley and sound effects, sculpting cinematic tone curves, and crafting opening visual hooks in the initial 2 seconds to maximize viewer engagement.',
+      results: [
+        'Built a diverse 60+ reel creative catalog spanning cultural documentaries, festival celebrations, travel vlogs, and aesthetic concepts.',
+        'Mastered rapid audio-visual synchronization and kinetic editing styles suited for modern vertical algorithms.',
+        'Organized the comprehensive archive in shared Google Drive cloud folders with streaming playback accessible to collaborators and viewers.',
+        'Demonstrated versatile creative capability from religious reverence to modern street aesthetics and technical trekking documentation.',
+      ],
+      keyTakeaway:
+        'Independent editing projects test and refine raw storytelling instincts, ensuring commercial and freelance deliverables are always backed by genuine technical craft.',
     },
   },
 ];

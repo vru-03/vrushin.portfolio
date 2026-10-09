@@ -549,3 +549,98 @@ export const graphicDesignSoftwareStack: SoftwareTool[] = [
   },
 ];
 
+export const selfEditingSoftwareStack: SoftwareTool[] = [
+  {
+    id: 'self-premiere-pro',
+    name: 'Adobe Premiere Pro',
+    category: 'Video Post-Production',
+    badge: 'Primary NLE Timeline Editing',
+    creativeRole:
+      'Long-form rough cuts, multi-camera sequencing, frame-accurate beat sync, speed ramping, and documentary editing for Kashi 84 Ghats, Mahakumbh, and Himalayan trek videos.',
+    deliverablesSummary: 'Complex Narrative Sequences & Multi-Track Audio Mixing',
+    brandColor: '#9999FF',
+    accentBg: 'bg-indigo-50/80 border-indigo-200/80',
+    tabAssociation: 'both',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect width="24" height="24" rx="5" fill="#00005B" />
+        <path d="M6 18V6h5.5a3.5 3.5 0 010 7H8v5H6zm2-7h3.5a1.5 1.5 0 000-3H8v3zM15 11v7h-2V11h2zm-.2-2.8a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4z" fill="#9999FF" />
+      </svg>
+    ),
+  },
+  {
+    id: 'self-capcut',
+    name: 'CapCut Desktop',
+    category: 'Vertical Short-Form',
+    badge: 'Dynamic Mobile Video & Kinetic FX',
+    creativeRole:
+      'High-velocity vertical 9:16 post-production, kinetic typography, automated audio waveform synchronization, optical flow speed ramps, and trending transitions.',
+    deliverablesSummary: '60+ Vertical 9:16 Reels for Instagram & Shorts',
+    brandColor: '#00F2FE',
+    accentBg: 'bg-cyan-50/80 border-cyan-200/80',
+    tabAssociation: 'both',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect width="24" height="24" rx="5" fill="#111827" />
+        <path d="M7 6l5 6-5 6h3l5-6-5-6H7zm7 0l5 6-5 6h3l5-6-5-6h-3z" fill="#00F2FE" />
+      </svg>
+    ),
+  },
+  {
+    id: 'self-sound-design',
+    name: 'Kinetic Sound Design',
+    category: 'Audio Engineering',
+    badge: 'Foley, Ambient Textures & Beat Matching',
+    creativeRole:
+      'Multi-layered audio mixing pairing sacred chants, traditional folk instruments, ambient outdoor soundscapes (Ganges waves, temple bells, mountain winds), and bass drops.',
+    deliverablesSummary: 'Immersive Spatial & Cinematic Soundtracks',
+    brandColor: '#10B981',
+    accentBg: 'bg-emerald-50/80 border-emerald-200/80',
+    tabAssociation: 'both',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect width="24" height="24" rx="5" fill="#064E3B" />
+        <path d="M4 10v4h3l4 4V6L7 10H4zm11-2a4.5 4.5 0 010 8m2.5-10.5a8 8 0 010 13" stroke="#34D399" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    id: 'self-color-grading',
+    name: 'Lumetri & Color Science',
+    category: 'Color Grading',
+    badge: 'Atmospheric Film Looks & Tone Curves',
+    creativeRole:
+      'Custom LUT development, golden hour enhancement, shadow tinting, and saturation isolation for vibrant festival colors (Holi, Ganpati) and high-altitude snow peaks.',
+    deliverablesSummary: 'Distinct Visual Signatures Across 60+ Videos',
+    brandColor: '#F59E0B',
+    accentBg: 'bg-amber-50/80 border-amber-200/80',
+    tabAssociation: 'both',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#F59E0B" strokeWidth="2" />
+        <path d="M12 3a9 9 0 010 18V3z" fill="#F59E0B" />
+      </svg>
+    ),
+  },
+  {
+    id: 'self-google-drive',
+    name: 'Google Drive Archive',
+    category: 'Cloud Storage & Delivery',
+    badge: 'self_video_edits Cloud Hub',
+    creativeRole:
+      'Organized cloud storage and streaming architecture for 60+ full-resolution MP4/MOV reel exports with organized subfolders for Ganpati edits and creative concepts.',
+    deliverablesSummary: 'Centralized Master Video Vault & Collaboration',
+    brandColor: '#EA4335',
+    accentBg: 'bg-red-50/80 border-red-200/80',
+    tabAssociation: 'both',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <path d="M8.2 18.5l-4.7-8.2 4.7-8.3h9.6l4.7 8.3-4.7 8.2H8.2z" stroke="#EA4335" strokeWidth="1.5" />
+        <path d="M8.2 2h7.6l4.7 8.3-4.7 8.2" stroke="#4285F4" strokeWidth="1.5" />
+        <path d="M3.5 10.3l4.7 8.2h7.6" stroke="#34A853" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+];
+
+

@@ -74,6 +74,13 @@ export const homeProjectsPreview: ProjectPreviewItem[] = [
     iconText: 'GD',
   },
   {
+    id: 'self-edited-reels',
+    title: 'Self-Edited Reels & Creative Archive',
+    description: '60+ sacred, travel & festival vertical reels in 9:16 (Google Drive archive)',
+    iconBg: '#dc2626',
+    iconText: 'RE',
+  },
+  {
     id: 'freelance-digital-projects',
     title: 'Digital Deliverables & Consulting',
     description: 'Interactive web deliverables, research & business decks',
