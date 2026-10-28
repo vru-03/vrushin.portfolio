@@ -25,10 +25,12 @@ import {
   Film,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const WorkView: React.FC = () => {
-  // Default to social-media tab as requested
-  const [selectedCategory, setSelectedCategory] = useState<WorkCategory>('social-media');
+  const { activeWorkCategory, setActiveWorkCategory } = usePortfolio();
+  const selectedCategory = activeWorkCategory;
+  const setSelectedCategory = setActiveWorkCategory;
   const [activeProjectModal, setActiveProjectModal] = useState<WorkProject | null>(null);
 
   // Close modal on Escape key
@@ -128,8 +130,10 @@ export const WorkView: React.FC = () => {
         {/* Horizontal tabs */}
         <div className="flex flex-wrap items-center gap-2 p-1.5 bg-stone-100/90 rounded-2xl border border-stone-200/80 w-fit max-w-full">
           {workCategories.map((cat) => {
-            const count =
-              cat.id === 'all'
+            const badgeText =
+              cat.id === 'self-editing'
+                ? '60+ Reels'
+                : cat.id === 'all'
                 ? workProjectsList.length
                 : workProjectsList.filter((p) => p.category === cat.id).length;
 
@@ -139,7 +143,7 @@ export const WorkView: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap ${
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'bg-stone-900 text-white shadow-xs'
                     : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
@@ -151,10 +155,16 @@ export const WorkView: React.FC = () => {
                 <span className="font-semibold">{cat.name}</span>
                 <span
                   className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md ${
-                    isActive ? 'bg-stone-800 text-stone-300' : 'bg-stone-200 text-stone-600'
+                    cat.id === 'self-editing'
+                      ? isActive
+                        ? 'bg-red-800 text-red-200 font-bold'
+                        : 'bg-red-100 text-red-700 font-bold'
+                      : isActive
+                      ? 'bg-stone-800 text-stone-300'
+                      : 'bg-stone-200 text-stone-600'
                   }`}
                 >
-                  {count}
+                  {badgeText}
                 </span>
               </button>
             );

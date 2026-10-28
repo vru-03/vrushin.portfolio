@@ -16,7 +16,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const HomeView: React.FC = () => {
-  const { setActiveSection } = usePortfolio();
+  const { setActiveSection, navigateToWorkTab } = usePortfolio();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [selectedEssay, setSelectedEssay] = useState<typeof homeWritingPreview[0] | null>(null);
 
@@ -93,7 +93,7 @@ export const HomeView: React.FC = () => {
                 <span className="text-stone-400 select-none text-xs mt-1">•</span>
                 <span>
                   <button
-                    onClick={() => setActiveSection('work')}
+                    onClick={() => navigateToWorkTab('social-media')}
                     className="font-medium text-stone-900 hover:text-stone-600 transition-colors cursor-pointer inline-flex items-center gap-1 text-left group"
                   >
                     <span>
@@ -109,7 +109,7 @@ export const HomeView: React.FC = () => {
                 <span className="text-stone-400 select-none text-xs mt-1">•</span>
                 <span>
                   <button
-                    onClick={() => setActiveSection('work')}
+                    onClick={() => navigateToWorkTab('freelancing')}
                     className="font-medium text-stone-900 hover:text-stone-600 transition-colors cursor-pointer inline-flex items-center gap-1 text-left group"
                   >
                     <span>
@@ -125,12 +125,28 @@ export const HomeView: React.FC = () => {
                 <span className="text-stone-400 select-none text-xs mt-1">•</span>
                 <span>
                   <button
-                    onClick={() => setActiveSection('work')}
+                    onClick={() => navigateToWorkTab('graphic-design')}
                     className="font-medium text-stone-900 hover:text-stone-600 transition-colors cursor-pointer inline-flex items-center gap-1 text-left group"
                   >
                     <span>
                       Graphic Designer —{' '}
                       <span className="underline underline-offset-2">Creative & Digital Content Visuals</span>
+                    </span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-800 transition-colors shrink-0" />
+                  </button>
+                </span>
+              </li>
+
+              <li className="flex items-start gap-2.5">
+                <span className="text-stone-400 select-none text-xs mt-1">•</span>
+                <span>
+                  <button
+                    onClick={() => navigateToWorkTab('self-editing')}
+                    className="font-medium text-stone-900 hover:text-stone-600 transition-colors cursor-pointer inline-flex items-center gap-1 text-left group"
+                  >
+                    <span>
+                      Video Editor —{' '}
+                      <span className="underline underline-offset-2">Self-Edited Reels & Creative Archive</span> (60+ Videos)
                     </span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-800 transition-colors shrink-0" />
                   </button>
@@ -347,9 +363,19 @@ export const HomeView: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.018, x: 4 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
-                onClick={() => setActiveSection('work')}
-                className="flex items-start gap-3.5 group cursor-pointer p-2.5 -mx-2.5 rounded-xl hover:bg-stone-100/80 transition-colors"
+                onClick={() => {
+                  if (proj.id === 'self-edited-reels') {
+                    navigateToWorkTab('self-editing');
+                  } else if (proj.id === 'vibrant-norta-freelance') {
+                    navigateToWorkTab('freelancing');
+                  } else if (proj.id === 'graphic-design-real-estate') {
+                    navigateToWorkTab('graphic-design');
+                  } else if (proj.id === 'shiv-shakti-developers') {
+                    navigateToWorkTab('social-media');
+                  } else {
+                    setActiveSection('work');
+                  }
+                }}
               >
                 {/* Project Icon Pill */}
                 <div

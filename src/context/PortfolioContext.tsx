@@ -1,10 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { NavSection, AcademicData } from '../types/portfolio';
+import { NavSection, AcademicData, WorkCategory } from '../types/portfolio';
 import { academicData } from '../data/academicData';
 
 interface PortfolioContextType {
   activeSection: NavSection;
   setActiveSection: (sec: NavSection) => void;
+  activeWorkCategory: WorkCategory;
+  setActiveWorkCategory: (cat: WorkCategory) => void;
+  navigateToWorkTab: (cat: WorkCategory) => void;
   academic: AcademicData;
   currentTime: string;
 }
@@ -13,6 +16,7 @@ const PortfolioContext = createContext<PortfolioContextType | undefined>(undefin
 
 export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [activeSection, setActiveSection] = useState<NavSection>('home');
+  const [activeWorkCategory, setActiveWorkCategory] = useState<WorkCategory>('social-media');
   const [currentTime, setCurrentTime] = useState<string>('');
 
   useEffect(() => {
@@ -37,11 +41,20 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateToWorkTab = (cat: WorkCategory) => {
+    setActiveWorkCategory(cat);
+    setActiveSection('work');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <PortfolioContext.Provider
       value={{
         activeSection,
         setActiveSection: navigateTo,
+        activeWorkCategory,
+        setActiveWorkCategory,
+        navigateToWorkTab,
         academic: academicData,
         currentTime,
       }}
